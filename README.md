@@ -13,7 +13,8 @@ Una aplicación web moderna de presentación estilo PowerPoint construida con Re
 - 🎨 **Diseño Premium**: Tema oscuro con glassmorphism y gradientes vibrantes
 - 🎭 **Animaciones Fluidas**: Transiciones suaves con Framer Motion
 - 📱 **Totalmente Responsivo**: Optimizado para móviles, tablets y desktop
-- ⌨️ **Navegación Múltiple**: Teclado, botones en pantalla y gestos
+- 👆 **Navegación Táctil**: Swipe izquierda/derecha en dispositivos móviles
+- ⌨️ **Navegación Múltiple**: Teclado, botones en pantalla y gestos táctiles
 - 🎯 **Barra de Progreso**: Indicador visual del avance en la presentación
 - 🚀 **Rendimiento Optimizado**: Carga rápida y experiencia fluida
 
@@ -58,6 +59,10 @@ npm run dev
 - **Teclado**: 
   - `→` o `Espacio`: Siguiente slide
   - `←`: Slide anterior
+- **Táctil (Móvil/Tablet)**:
+  - Swipe izquierda: Siguiente slide
+  - Swipe derecha: Slide anterior
+  - Threshold mínimo: 50px para evitar swipes accidentales
 - **Botones en Pantalla**: 
   - Flechas laterales en la parte inferior
   - Contador central muestra posición actual

@@ -1,21 +1,85 @@
+/**
+ * Global Styles and Theme Configuration
+ * 
+ * This file contains:
+ * - Tailwind CSS v4 imports and configuration
+ * - Custom theme variables using @theme directive
+ * - Global base styles for body element
+ * - Custom scrollbar styling
+ * 
+ * Tailwind CSS v4:
+ * - Uses new @import syntax instead of @tailwind directives
+ * - Theme variables defined with @theme block
+ * - CSS custom properties for dynamic theming
+ * 
+ * @see {@link https://tailwindcss.com/docs/v4-beta}
+ */
+
+/* Import Tailwind CSS v4 */
 @import "tailwindcss";
 
+/**
+ * Custom Theme Configuration
+ * 
+ * Defines color palette and design tokens for the application.
+ * These variables are accessible throughout the app via Tailwind utilities.
+ * 
+ * Color Scheme:
+ * - primary: Blue (#3b82f6) - Main brand color
+ * - secondary: Purple (#8b5cf6) - Accent and highlights
+ * - accent: Cyan (#06b6d4) - Interactive elements
+ * - dark: Slate (#0f172a) - Background
+ * - light: Slate (#f1f5f9) - Text and foregrounds
+ * 
+ * Usage:
+ * - bg-primary → background-color: var(--color-primary)
+ * - text-accent → color: var(--color-accent)
+ * - border-secondary → border-color: var(--color-secondary)
+ */
 @theme {
-  --color-primary: #2563eb;
-  --color-secondary: #1e40af;
-  --color-accent: #f59e0b;
-  --color-dark: #111827;
-  --color-light: #f3f4f6;
-  --font-sans: 'Inter', sans-serif;
+  --color-primary: #3b82f6;
+  --color-secondary: #8b5cf6;
+  --color-accent: #06b6d4;
+  --color-dark: #0f172a;
+  --color-light: #f1f5f9;
 }
 
+/**
+ * Base Styles
+ * 
+ * Global styles applied to the body element.
+ * Sets the foundation for the entire application.
+ * 
+ * Properties:
+ * - background-color: Dark theme background
+ * - color: Light text for contrast
+ * - font-smoothing: Improved text rendering on all platforms
+ */
 @layer base {
   body {
-    @apply bg-dark text-light antialiased;
+    background-color: var(--color-dark);
+    color: var(--color-light);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
   }
 }
 
-/* Custom Scrollbar */
+/**
+ * Custom Scrollbar Styling
+ * 
+ * Provides a custom, themed scrollbar for webkit browsers.
+ * Matches the dark theme aesthetic of the application.
+ * 
+ * Browser Support:
+ * - Chrome, Safari, Edge (webkit-based)
+ * - Firefox uses default scrollbar
+ * 
+ * Styling:
+ * - Width: 8px for subtle appearance
+ * - Track: Dark gray (#1f2937)
+ * - Thumb: Medium gray (#4b5563) with hover state
+ * - Border radius: 4px for smooth corners
+ */
 ::-webkit-scrollbar {
   width: 8px;
 }

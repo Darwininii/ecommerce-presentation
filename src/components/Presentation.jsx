@@ -42,6 +42,13 @@ import { slides } from '../data/slides';
 const Presentation = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
 
+    // Touch navigation state
+    const [touchStart, setTouchStart] = useState(null);
+    const [touchEnd, setTouchEnd] = useState(null);
+
+    // Minimum swipe distance (in px) to trigger navigation
+    const minSwipeDistance = 50;
+
     /**
      * Navigate to the next slide
      * 
@@ -73,6 +80,39 @@ const Presentation = () => {
         }
     }, [currentSlide]);
 
+    /**
+     * Touch event handlers for swipe navigation
+     * Detects horizontal swipe gestures on touch devices
+     */
+    const onTouchStart = (e) => {
+        setTouchEnd(null); // Reset touch end
+        setTouchStart(e.targetTouches[0].clientX);
+    };
+
+    const onTouchMove = (e) => {
+        setTouchEnd(e.targetTouches[0].clientX);
+    };
+
+    const onTouchEnd = () => {
+        if (!touchStart || !touchEnd) return;
+
+        const distance = touchStart - touchEnd;
+        const isLeftSwipe = distance > minSwipeDistance;
+        const isRightSwipe = distance < -minSwipeDistance;
+
+        // Left swipe = next slide, Right swipe = previous slide
+        if (isLeftSwipe) {
+            nextSlide();
+        }
+        if (isRightSwipe) {
+            prevSlide();
+        }
+    };
+
+    /**
+     * Keyboard navigation effect
+     * Handles arrow keys and spacebar for navigation
+     */
     useEffect(() => {
         const handleKeyDown = (e) => {
             if (e.key === 'ArrowRight' || e.key === 'Space') {
@@ -87,7 +127,12 @@ const Presentation = () => {
     }, [nextSlide, prevSlide]);
 
     return (
-        <div className="relative w-full h-screen overflow-hidden bg-dark text-white">
+        <div
+            className="relative w-full h-screen overflow-hidden bg-dark text-white"
+            onTouchStart={onTouchStart}
+            onTouchMove={onTouchMove}
+            onTouchEnd={onTouchEnd}
+        >
             {/* Background Effects */}
             <div className="absolute inset-0 overflow-hidden pointer-events-none">
                 <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-600/20 rounded-full blur-[120px]" />
