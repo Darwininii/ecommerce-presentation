@@ -310,6 +310,7 @@ Las contribuciones son bienvenidas. Por favor:
 ## 📞 Contacto
 
 Para preguntas o sugerencias, por favor abre un issue en el repositorio.
+Correo: darwninoe@gmail.com
 
 ---
 
