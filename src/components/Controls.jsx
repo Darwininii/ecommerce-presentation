@@ -63,10 +63,32 @@ const Controls = ({ current, total, onNext, onPrev }) => {
             <button
                 onClick={onPrev}
                 disabled={current === 0}
-                className={`fixed left-4 md:left-8 bottom-6 p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300 border border-white/10 cursor-pointer z-50 ${current === 0
+                className={`
+        fixed 
+        left-4 
+        bottom-6
+        p-3 md:p-4 
+        rounded-full 
+        bg-white/10 
+        hover:bg-white/20 
+        backdrop-blur-md 
+        transition-all 
+        duration-300 
+        border border-white/10 
+        cursor-pointer 
+        z-50
+
+        /* ESTILOS PARA TABLET, MONITORES Y PANTALLAS GRANDES */
+        md:left-8
+        md:bottom-auto
+        md:top-1/2
+        md:-translate-y-1/2
+        
+        ${current === 0
                         ? "opacity-30 cursor-not-allowed"
                         : "hover:scale-110 active:scale-95"
-                    }`}
+                    }
+    `}
             >
                 <ArrowBigLeftDash className="text-white" size={25} />
             </button>
@@ -75,13 +97,36 @@ const Controls = ({ current, total, onNext, onPrev }) => {
             <button
                 onClick={onNext}
                 disabled={current === total - 1}
-                className={`fixed right-4 md:right-8 bottom-6 p-3 md:p-4 rounded-full bg-white/10 hover:bg-white/20 backdrop-blur-md transition-all duration-300 border border-white/10 cursor-pointer z-50 ${current === total - 1
+                className={`
+        fixed 
+        right-4 
+        bottom-6
+        p-3 md:p-4 
+        rounded-full 
+        bg-white/10 
+        hover:bg-white/20 
+        backdrop-blur-md 
+        transition-all 
+        duration-300 
+        border border-white/10 
+        cursor-pointer 
+        z-50
+
+        /* ESTILOS PARA TABLET, MONITORES Y PANTALLAS GRANDES */
+        md:right-8
+        md:bottom-auto
+        md:top-1/2
+        md:-translate-y-1/2
+
+        ${current === total - 1
                         ? "opacity-30 cursor-not-allowed"
                         : "hover:scale-110 active:scale-95"
-                    }`}
+                    }
+    `}
             >
                 <ArrowBigRightDash className="text-white" size={25} />
             </button>
+
 
             {/* Slide Counter - Bottom Center */}
             <div className="fixed bottom-6 left-1/2 -translate-x-1/2 z-50">
