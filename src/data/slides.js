@@ -330,7 +330,7 @@ export const slides = [
         id: 22,
         title: "Conclusión",
         subtitle: "Una Evolución Constante",
-        content: "La historia del comercio electrónico está llena de innovaciones que facilitan la vida a los usuarios. Desde catálogos hasta IA y realidad aumentada, el objetivo siempre ha sido la comodidad del consumidor.",
+        content: "La historia del comercio electrónico (E-Commerce) está llena de innovaciones que facilitan la vida a los usuarios. Desde catálogos hasta IA y realidad aumentada, el objetivo siempre ha sido la comodidad del consumidor.",
         bulletPoints: [
             "Innovación constante",
             "Atención a necesidades del mercado",
