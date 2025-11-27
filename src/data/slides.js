@@ -64,6 +64,7 @@ export const slides = [
         title: "Historia del Comercio Electrónico",
         subtitle: "Evolución y Futuro",
         content: "Conoce la historia del comercio electrónico, cómo ha evolucionado desde sus inicios hasta hoy, y qué nos depara el futuro.",
+        image: "/ecommerce-pptx.png",
         type: "intro"
     },
     {

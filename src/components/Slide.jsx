@@ -80,8 +80,25 @@ const Slide = ({ data, isActive }) => {
                         ))}
                     </ul>
                 )}
-            </motion.div>
-        </div>
+                {/* Imagen abajo del contenido Inicial */}
+                {data.image && (
+                    <div className="text-left inline-block space-y-3 bg-black/20 p-6 rounded-xl max-w-2xl">
+                        <motion.div
+                            initial={{ opacity: 0, y: 20 }}
+                            animate={isActive ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+                            transition={{ delay: 0.3 }}
+                            className="w-[180px]"  // ← tamaño fijo y pequeño
+                        >
+                            <img
+                                src={data.image}
+                                alt={data.title}
+                                className="w-full h-auto object-contain rounded-lg shadow-md"
+                            />
+                        </motion.div>
+                    </div>
+                )}
+            </motion.div >
+        </div >
     );
 };
 
